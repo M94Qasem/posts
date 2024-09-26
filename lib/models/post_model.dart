@@ -16,4 +16,17 @@ class Post {
       content: json['content'],
     );
   }
+
+  // If you need to send Post data as JSON to an API, you might need this method:
+  // Map<String, dynamic> toJson() {
+  //   return {
+  //     'title': title,
+  //     'picture': imageUrl,
+  //     'content': content,
+  //     'slug': slug,
+  //     'user': userId,
+  //   };
+  // }
+
+
 }

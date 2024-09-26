@@ -36,6 +36,7 @@ class HomeScreenState extends State<HomeScreen> {
 
   final titleController = TextEditingController();
   final contentController = TextEditingController();
+  final slugController = TextEditingController();
 
   @override
   void initState() {
@@ -47,7 +48,9 @@ class HomeScreenState extends State<HomeScreen> {
     final newPost = await apiService.createPost({
       'title': titleController.text,
       'content': contentController.text,
+      'slug': slugController.text,
       'picture': 'https://fakeimg.pl/350x200/?text=FreeFakeAPI',
+      'user': 5, // تأكد من إرسال معرف المستخدم الصحيح هنا
     });
 
     if (newPost != null) {
@@ -237,6 +240,20 @@ class HomeScreenState extends State<HomeScreen> {
                   ),
                   CustomTextField(
                     controller: contentController,
+                  ),
+                  const SizedBox(height: 16),
+                  const Padding(
+                    padding: EdgeInsetsDirectional.only(start: 8.0),
+                    child: Text(
+                      "Slug",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ),
+                  CustomTextField(
+                    controller: slugController,
                   ),
                   const SizedBox(height: 16),
                   SizedBox(
