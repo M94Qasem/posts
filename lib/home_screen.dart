@@ -49,7 +49,7 @@ class HomeScreenState extends State<HomeScreen> {
       'title': titleController.text,
       'content': contentController.text,
       'slug': slugController.text,
-      'picture': 'https://fakeimg.pl/350x200/?text=FreeFakeAPI',
+      'picture': 'assets/image2.jpg',
       'user': 5, // تأكد من إرسال معرف المستخدم الصحيح هنا
     });
 
